@@ -1,0 +1,79 @@
+Current Required Use Cases - December 14, 2020
+
+I am planning on implementing the following features in the game:
+
+In the menu screen, the player can:
+    -Log in
+    -Create account
+
+In the map, the player can:
+    -Fly
+    -Move
+    -Change map
+
+If something is missing or you have any recommendations, please let me know!
+
+Detailed Use Cases
+
+Fly:
+    -Player presses SPACE
+    -Player's drag (resistance to movement) is set to low value
+    -Player lifts above ground
+    -Player's fly energy gets used up while above ground
+    -Player lets go of SPACE
+    -Player falls back to ground
+    -Player's drag set to normal value
+    -If the player lands in a hazard within the map (e.g. a pool of water),
+     <Scenario 1>
+    -If the player lands in an outer hazard (e.g. the edge of a cliff),
+     <Scenario 2>
+     
+    Scenario 1:
+        The player will be lose HP and will be placed on the last position the
+        player was on ground.
+    Scenario 2:
+        The player will die and respawn at the last saved checkpoint.
+    
+Move:
+    -Player presses WASD or arrow keys
+    -Player's velocity approaches nominal speed (how fast this happens depends 
+     on whether the player is on the ground or in the air)
+    -Player lets go of WASD or arrow keys
+    -Player's velocity approaches zero
+
+Change Map:
+    -Player moves into a portal
+    -Player enters map transition state (and won't be able to move)
+    -Fade to black
+    -Unload current map
+    -Load destination map
+    -Move player to correct position
+    -Fade out of black
+    -Player leaves transition state
+    
+Log in:
+    -Player clicks "Existing User" button
+    -Player types in Username and Password
+    -Player clicks "Log In" button
+    -Send information to server
+    -Wait for server response
+    -If Username/Password combination does not exist, <Scenario 1>
+    -Transition out of menu screen
+    -Load player's current map
+
+    Scenario 1:
+        Show an error message. Give 2 more attempts before disconnecting the
+        player.
+
+Sign up:
+    -Player clicks "New User" button
+    -Player types in Username and Password
+    -Player clicks on "Create User" button
+    -Send information to server
+    -Wait for server response
+    -If the username exists, <Scenario 1>
+    -Give a success message and put username in login screen's username field
+    
+    Scenario 1:
+        Show an error message.
+

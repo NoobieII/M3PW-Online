@@ -1,0 +1,6 @@
+Technical Specifications - December 14, 2020
+
+The program will:
+	-use SDL 2 for graphics, audio and input events.
+	-be portable on most desktop OS's
+	-have a screen resolution of 800x600 pixels.

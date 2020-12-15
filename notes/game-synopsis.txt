@@ -1,0 +1,17 @@
+Game Synopsis - December 14, 2020
+
+This is the most updated synopsis of the game.
+
+You are a dragon, protecting your species from becoming extinct by humans. The 
+setting is the late 17th century, near the beginning of the industrial 
+revolution. Your species has lived isolated from humans. The objective is to 
+fight humans off by either using your own prowess as a dragon or by creating 
+and operating weapons using technology passed on from human remains.
+
+You have the choice to work in a combat division or an engineering division. As 
+the game progresses, technology progresses, attacks increase in sophistication 
+and newer technologies become discovered. You have the option to interact with 
+other animal species.
+
+To find the game's story, check the concepts folder. The story is subject to 
+change as the game's path changes.

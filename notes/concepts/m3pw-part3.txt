@@ -1,0 +1,189 @@
+M3PW Project - Part 3
+September 11-26, 2020 - Draft 1
+
+Note: Please read this text file in a text editor with a monospace typesetting, such as Notepad++!
+
+An overview of the current world.
+
+
+            Mountain
+            .
+        Fox.Cave        .
+        Den .           .
+  ..Foxes.......Lib-....Encamp
+                rary    ment
+                        .
+                        .
+                        .
+              Forest....Encounter...........Beach
+                        Human               .
+                        .                   .
+                        .           Your    .
+                        Hill-       Cave    x
+                        top         .
+                                    .
+                                    .
+                                    Lake
+
+
+The library is rather quiet. You hear the occasional soft rattling of papers being handled. In the distance, the fog colour is brown-ish. It's not an enormous library but it has around ten bookshelves worth of books.
+
+The bookshelf is an NPC object that you can click on. It contains books on mythological creatures and their supernatural powers. You see a list of books:
+d00 Which book interests you? (r01-r05)
+r01 The book with the porcupine with big spikes across its back.
+r02 The book with the lizard strategically jabbing its finger in the back of its opponent.
+r03 The book with the silhouette of a fire breathing rabbit sitting in a bed.
+r04 The book with a dragon inducing dizziness in its opponent.
+r05 None of the above. (d01)
+d01 Without picking a book, you will have a hard time practicing new skills.
+
+If you pick a book, it will appear in your inventory. You'll have the option to read it.
+The porcupine book:
+The spikes on this particular fellow are incredibly large and pointy, unlike most average porcupines. Under his control, he can force his spines to point outward, making it difficult to attack him. Many furs who managed to witness him in combat described his spines as rays of the sun radiating outward. His great abilities appear to have come from training his defense.
+
+The lizard book:
+This lizard specializes in hitting the critical parts of the body in combat. The picture on the cover depicts a temporary paralysis technique that he has developed himself. He also has a small specialization in speed, not too much to significantly affect his other combat attributes.
+
+The rabbit book:
+You'll never want to get seen being burned by a short rabbit. Nobody knows where she acquired the power to shoot fire from her mouth. Usually this ability is limited to dragons.
+
+The dragon book:
+Even though he is a dragon, he managed to master the art of psychics. Psychics are usually used as a destructive weapon because the process of extracting knowledge is much more delicate. He is one of the few who have been able to. His abilities as a dragon assist his psychic abilities.
+
+
+You'll have combat stat values:
+intelligence, luck, speed, etc.
+Your effective combat stat value will work based on this expression.
+
+Effective stat[1] =                    stat[1]^2
+                       ---------------------------------------- * stat[1]
+                       stat[1]^2 + stat[2]^2 + stat[3]^2 + ... 
+
+so each stat will be weighted based on the square of the ratio of the stat squared and the sum of all stats squared. In other words, if you specialize in more than one stat, you will have to work harder.
+
+If you have 50 intelligence and nothing else, your effective intelligence is 50.
+However, if you want an effective intelligence of 50 AND an effective luck of 50, you will need 100 intelligence and 100 luck. This may be overcomplicating things and I may just scrap this idea. Again, this is just an idea I have.
+
+The combat mechanic will probably work on a fixed delay system similar to Runescape's. You currently have basic moves that all other animals can use (kick, punch, scratch).  Unless you have spent time killing other wild animals, you still have a pretty low combat level. Hopefully, you can recall the animals in the previous maps. Some were a high level. Some were lower. Training on the same monsters will increase your mastery of skills you have but will not expand the available skills.
+
+Naturally, you will develop new attacks as you level up. The types of moves you learn will correspond to the added combat stats you add every time you level up. Skills will be organized in a skill tree, and skills will alse require certain stats to learn. Some skills will also only be possible to learn with certain knowledge you receive from quests.
+
+Like always, you may talk to the old fur in the encampment.
+d00 If you were ever asked to move a mountain, would you be able to? (d01)
+d01 You probably think not, and that would be the rational answer. (d02)
+d02 Would you be able to do me a favor? Could you bring me 40 mountain fragments? (r01-r02)
+r01 Yes (d03)
+r02 No
+d03 If you don't know where to find the mountain, check your map.
+
+You might not be able to move the mountain but you will get strong in the process. You can pick up the quest items at the top of the mountain. You can only carry a certain amount of weight before your combat abilities are disabled. There is a second upper limit for the absolute weight of items you are carrying.
+
+In the west side of the new encampment, the forest mainly consists of open grass areas. Beyond the map where you found the library, the path continues and you find a cave entrance on the side of the mountain. The guy in the dinosaur suit is also in this map.
+
+Dinosaur suit:
+d00 You're still going, huh? Like I said earlier, watch your steps. There are a lot of fox folk along this path.
+
+On the left, there is a den situated on the side of the mountain, brightly lit from inside. A fox dude is standing in front of the door. 
+
+Fox dude:
+d00 A little dragon kid like you can't come in! Get lost.
+
+The mountain cave entrance leads to a small cave map. It is dark and the overall colour scheme is dark blue. It is visible inside the cave. The main obstacles are stalagmites, boulders and platform edges. Some new monsters appear inside caves. Slimes are one of them. They are a bit stronger than the rabbit monsters you may have fought earlier.
+
+There is a bright light, signifying an exit. It leads to the top of the mountain. There are higher level foxes that automatically attack you. You need to pick the mountain fragments and not let them kill you.
+
+You may talk to the old fur again after starting the quest.
+If you didn't finish the quest:
+d00 Stick to your promises. I recommend not making them.
+
+If you did finish the quest:
+d00 You did it! This should help us build more things.
+    (You gain experience)
+	(You get a bomb sack) (d01)
+d01 I decided to give you an extra gift. This bomb sack can be useful in certain situations. You may have seen this before. Where I got it must not be questioned.
+
+You can break through certain walls with bombs. It may damage monsters.
+
+In the cave, if you use the bomb on the left side of the wall, it will make an entrance in the fox den you weren't allowed to enter.
+
+Inside the den, you enter from the right side of the wall. Many foxes are standing inside. It just happens that Vanilla Fox is performing. At the top of the map, there is a stage where the fox is located. The lyrics occasionally appear above his head. Behind the stage are many NPC's that you can attack.
+
+You can train on the people in the crowd. Don't worry about killing them, NPC monsters respawn. Be careful not to get yourself killed.
+
+The next day, you get to see your classmates before the test. There is Franku the fox kid; Hortensia the fawn; Noah, the other dragon who challenged you to a duel. They have all increased in strength.
+
+Talk with Franku:
+d00 I know I'm a fox but I couldn't care less if you were a dragon. Say, did you get to see this yet?
+    (Franku does the moonwalk, spins and throws his hat at you. It flies at you and lowers your hitpoints and returns back to Franku) (d01)
+d01 Want to see it again? (r01, r02)
+r01 Yes
+	(Franku does the moonwalk, spins and throws his hat at you. It flies at you and lowers your hitpoints and returns back to Franku) (d01)
+r02 No
+
+Talk with Hortensia if you don't plan on eating her.
+d00 ... You! If you touch me again I swear I'll- (d01)
+d01 Oh, ____, it's you! I'm sorry, I almost weakened you with my deadly glare. (d02)
+d02 I... um... well... wanted to say good luck with the test.
+
+Talk with Hortensia if you do plan on eating her.
+d00 I... I hope you aren't planning on eating me still. (r01, r02)
+r01 I still want to eat you. (d01)
+r02 No, I won't eat you. (d02)
+d01 Go away ____. I promise I won't be putting up an easy fight.
+d02 Thanks! I knew you were different.
+
+Talk with Noah
+d00 Oh, it's you again, ____! (d01)
+d01 I have been studying the secret art of ninjutsu while you were probably sleeping! (d02)
+d02 I demand that we duel so I can prove to you that you are weak. (r01, r02)
+r01 Challenge accepted.
+	(Noah starts attacking you.)
+r02 I regret laying my attention on you. (d03)
+d03 Hmph! Your methodology is fundamentally flawed.
+
+One-Liners here!
+
+Sergal:
+d00 With thee baguette, I rule thee world!
+
+Bobcat:
+d00 My voice kicks ass!
+
+The test involves a multiple choice some hard and many nonsensical questions. There will be some multiple choice and some numeric values to fill in. Some questions may not have a right answer and reflect how you as a kid would read the question.
+
+1. In order for dragons to succeed in flight, which of the following is the most vital?
+a. An empty stomach
+b. Hollow bones
+c. Carbon Dioxide
+d. Hydrogen
+
+2. Suppose a male gryphon with a wing span of 2.5 metres, weighing 150 kilograms, jumps off a cliff and reaches a velocity of 25 metres per second downward. When the gryphon opens its wings, its overall surface area is 150 square metres and each wing flap provides an impulse of 1200 N*s. Neglect air resistance when its wings are closed. At least how many times does the gryphon have to flap its wing in order to obtain an upward velocity?
+a. 2
+b. 3
+c. 4
+d. 5
+
+3. At the local rabbit hole library, during what hours is the fire-breathing rabbit present?
+a. 5am-10am, 8pm-3am
+b. 5am-7am, 12pm-1pm, 5pm-7pm
+c. 4am-8am, 12pm-4pm, 8pm-12am
+d. 10am-2pm, 8pm-4am
+
+4. Two dragons are in a fight. One clearly has an advantage of being physically stronger than the other. The other dragon pukes at the stronger dragon. Which of the following best describes the situation?
+a. The weaker dragon wants to reduce the opponent's appetite.
+b. The weaker dragon will attempt to fly away.
+c. The weaker dragon will make a run for it.
+d. The weaker dragon got hit in the stomach.
+
+5. Your brother is wearing leather armour accompanied with chainmail. You could have sworn that the armour was made of wood yesterday.
+a. This is an example of the Mandela Effect
+b. Your brother was appointed to a higher authority.
+c. Your brother decided to obtain better armour.
+d. The armour was enchanted.
+
+[Need more questions!]
+
+That's all for I can write for now. I'll return to the incomplete parts in parts 1&2.
+
+
+https://discord.gg/scKpb2

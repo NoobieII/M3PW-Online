@@ -1,0 +1,27 @@
+Features - December 14, 2020
+
+This is a list of features that are completed, currently being worked on and to be completed in the future.
+
+Currently being worked on:
+    In the menu screen, the player can:
+        -Log in
+        -Create account
+
+    In the map, the player can:
+        -Fly
+        -Move
+        -Change map
+    
+    -A basic game engine
+    -Sprites. This includes the player sprites, map sprites, and user interface sprites. I might ask for help with this part when a complete requirement specification arrives.
+    
+Future:
+    In the map, the player can:
+        -Talk to NPC's
+        -Pick up items
+        -Access the inventory screen
+        -Drop items
+    
+Completed:
+    (None yet)
+

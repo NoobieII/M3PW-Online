@@ -1,0 +1,215 @@
+M3PW Revision 1 - August 28, 2020
+
+In the far reaches of the galaxy, most planets are barren.
+Our planet has just the right temperature and consistency for life to thrive.
+For as long as we can remember, dragons have always been at war with the humans. Their intelligence has always been undermined by the fear that they eat people. All the other species will have a different reason, but they all have the same enemy: humans!
+
+Create the character
+There will be the following options: 
+Select your species:
+Canine, Feline, Dragon, Avian
+What is your name:
+What is your gender: Male/Female/None
+What is your primary colour: Black, Brown, Red, Orange, Yellow, Green, Blue, Purple, Grey, White
+What is your secondary colour: ...
+Pick the type of ears: ...
+Pick the type of eyes: ...
+Pick the type of hair: ...
+Pick the type of tail: ...
+Give a short description: (255 characters max)
+
+Start in a(n) ______ with your character's mother
+For a canine/feline: den
+For a dragon: cave
+For an avian: nest
+
+There is a common process in progressing through this starting part of the game.
+The player will get used to the controls. The player will learn to use items. The player will fight in the end. You will get in a fight with a human and lose. Your mother will save you in the end.
+
+You wake up in the cave. There is an exit on one side of the screen. On the top side, there is the mother dragon who is much bigger. She is beautiful and elegant, a cream white colour with feathery wings. In front of her belly are some other baby dragons with varying body features, highlighting what the player could have chosen when making their own character. They are eating fresh food brought by the mother. You can talk to them, but they will only make noises as they are just babies.
+
+You get to move around inside the cave. If you move near the exit, the mother will pull you back inside. She'll tell you to eat some food. Click on the food and your inventory will have "Dragon Food." You can't progress the game until eating the food. Once the player eats the food, the mother says that it is time to sleep. Screen fades to black.
+
+The mother tells a tale to the dragon babies. [INCOMPLETE]
+
+The next day, the mother asks you to go out to get some food on your own. You will have multiple ways to obtain the food. You can either hunt the food or find something else to eat without killing.
+
+-d00 Good morning ___. You're the last to wake up! (d01)
+-d01 Go outside and fetch something to eat. You can either hunt something down or find something else if you don't feel like hunting. (d02)
+-d02 But always make sure that you don't pick on a beast larger than you are.
+
+You leave the cave and you are standing on the side of a mountain. The air is gentle and the sky is mostly clear. Around, you can see the rocky hillside of the mountains, many spruce trees below. In the distance is the ocean. Some deer can be seen however their level is too high for you to fight them. If you die in battle, you respawn at the last save point (each major town has a save point - by default it is in the the cave).
+
+You keep moving forward and there are some bushes that with berries on them. There are rabbits that can be killed. There is a body of water to drink. Quite a biologically diverse forest.
+
+Return back to the cave once you have fetched your own food. The mother is proud. She almost thought that you wouldn't make it back.
+
+-d00 My my, you're alive! It's not so hard, is it?
+
+The next day, your mother takes you and the dragon kids outside near the ocean. One of your siblings calls for you to come, one map screen to the right. There, you encounter a human for the first time. You are no match for him.
+
+-d00 Look at that! A first-hand sight of two baby dragons! (d01)
+-d01 Come here, little guy, I won't hurt you.
+
+Your sibling shoots a small fireball at the hunter.
+-d00 No way!
+
+The man loses his patience.
+-d00 Alright, I have haaaad it. You two are dead.
+
+You get knocked out by the man. Screen fades to white.
+
+Fade to white
+
+You wake up alone and the area is littered with debris left by humans.
+
+Talk with an old fur, beside the sea, the moon becoming visible
+
+-d00 They made another mess out there. We must leave this place soon (r01,r02).
+
+-r01 Why don't you like this place (d01)?
+-r02 And so be it (d02).
+
+-d01 You're too young to understand (d02).
+-d02 In the meantime, could you help the other kids clean up our field? We must study these items.
+
+At the early phase of the game, when the character is young, a lot of the game can't
+involve direct research and manufacture of techology, but things younger kids can
+do. It could be picking up scraps of the war to help the grown ups salvage what the
+humans have left.
+
+Here is some dialogue with some of the kids. Most of them have one-liners.
+
+-d00 What are you looking at?!
+
+-d00 Hey, you're a dragon! I'm not letting you eat me in the future (r01,r02).
+
+-r01 I'm going to eat you now then (d01)!
+-r02 Well I don't want to eat you (d02).
+
+-d01 No!
+-d02 Oh, well I'm Hortensia. What's your name? Nice meeting you ---!
+
+-d00 Since we're both dragons, I challenge you to a duel! (r01,r02)
+
+-r01 Accept
+     (The dragon kid attacks you)
+-r02 Decline
+
+-d00 Shame on you and your mother.
+
+The kids are NPC's and just like men and women in Runescape, you can attack them if you want. Though they may be a challenge to defeat at your level.
+
+In the world of the game, the objective is that all species realize that they have a common enemy in hand so that they can work together. It will be up to the player to figure out that collaboration is beneficial.
+
+September 6-7, 2020 Draft 1
+I have shown the work to Noah, Mariza and Katie. They all seemed to like it a bit.
+
+After finishing that quest involving picking up the human goods, the old fur you were talking to says:
+if you haven't finished yet,
+-d00 We could use a little more than what you have brought. Don't look at me like that! Everyone else is moving what we have up north.
+
+if you have finished
+-d00 Ah good work, it looks like you've gotten what we need. Go back to where you came from. Your mom should be able to fly you to the new encampment. (d01)
+-d01 Hmm... For being a good kid, I suppose you can keep one of these pieces from the humans. We've already seen them in the past.
+    (Pick an article of armour. There is a lobster tail helmet, gauntlets and a round shield.)
+
+You head back the way you came from when your mother took you and your siblings outside. The path you and your mother took was a one-way path and you can't return back up the rocky hill yourself.
+
+There is someone standing at this rocky hill bottom. (He functions similarly to the man in the dinosaur suit in Cave Story). He will not give the player any items or quests but may give insight about the area you are currently in.
+
+-d00 You came from up there? Better think twice before jumping down ledges. (d01)
+-d01 Maybe you should tag along with the other fellow dragons.
+
+You find a male crow-looking guy standing on the same map where you encountered the human. He acts as a transportation service. (He is related to an alcoholic crow man I wrote about in 2017.) If you talk to him, he says:
+
+-d00 Mmm... You say you need to go somewhere? I can take you to many places! (r01, r02)
+-r01 Nah, I'm sorry. I don't take ride from strangers.
+-r02 Booyah! (d01)
+-d01 I can take you to the new encampment. Hold onto my rope!
+
+You take a journey up through the forest
+
+In the new encampment, there are "buildings" (I put it in quotes because animals don't make buildings yet!), primarily with dragons living in them. On one of the map screens, a big fire burns strongly. The same old fur who gave you the piece of armour is standing there.
+
+-d00 This fire commemorates the tragedy we've just faced and it marks our war against humans. (r01, r02)
+-r01 I understand... (d02)
+-r02 Wait, what tragedy? (d01)
+-d01 ... Well, we lost the area we used to live in to the humans. They're most likely meddling in the area now. (d02)
+-d02 This fire will burn for about 100 years with the material that it is made of. It is only possible to dowse the flame but not to extinguish it, as it is a chemical fire, to be specific.
+
+There is a rather conscription-like school that you will eventually enter upon browsing through the town. Upon entering, you will get pulled into class. You are in a makeshift classroom. The teacher is a big western dragon wearing eyeglasses, sitting on a small stool.
+-d00 ATTENNNN-SHUN! Welcome to your first day of school. (d01)
+-d01 On the left we have a whole selection of toys that we have engineered into your curriculum. (d02)
+-d03 On the right are some picture books tailored to comply with our government regulations. In the middle you have me. (d04)
+-d04 Dig in, everyone!
+    (The students all scramble, avoiding the teacher in the middle.)
+
+You are free to roam around the classroom. Now is a chance to talk to talk to some classmates (or attack them). However, all of the toys and books are being used by other kids. If you talk to the teacher, you will get a long story about about his infiltration in a human society (to be written in detail later) [INCOMPLETE].
+
+The teacher starts talking.
+-d00 It is time for us to sing our ABC's. You start, four-eyes.
+    (Each kid takes turns saying the next letter in the alphabet.)
+-d01 A
+-d02 B
+-d03 C
+-d04 D
+-d05 E
+-d06 F (r01, r02, r03, r04)
+-r01 F (d07)
+-r02 H (d07)
+-r03 E (d07)
+-r04 G (d08)
+-d07 I said it before and I will say it again. You must pay attention! Stomachs flat, everyone! (d01)
+-d08 H
+-d09 I
+-d10 J
+-d11 K
+-d12 L
+-d13 M (r05, r06, r07, r08)
+-r05 C (d07)
+-r06 K (d07)
+-r07 N (d13)
+-r08 I (d07)
+-d13 O
+-d14 P
+-d15 Q
+-d16 R
+-d17 S
+-d18 T (r09, r10, r11, r12)
+-r09 U (d19)
+-r10 L (d07)
+-r11 N (d07)
+-r12 A (d07)
+-d19 V
+-d20 W
+-d21 X
+-d22 Y
+-d23 Z
+-d24 Nicely done. You pass the first day of class. (d25)
+-d25 Umm, yeah. So I have been given word that we need to be picking up the pace. (d26)
+-d26 There will be quite a test. Be prepared in all ways and forms. Class dismissed!
+
+You find a rabbit hole one map screen west of the encampment. A vixen-looking dude is standing outside of it.
+-d00 Whenever the old rabbit is gone, his wife takes over. She breathes fire, so don't piss her off! (r01, r02)
+-r01 Yo! Where are your manners?
+-r02 Thanks for the tip! (d01)
+-d01 No problem! They call me Franku.
+
+It appears to have been there for a long time. Inside is a library. Fortunately, the male rabbit is there. He looks after all the records in the library.
+-d00 Hey kid. I'm really sorry to say, but we don't have picture books here. (r01, r02, r03, r04)
+-r01 What do people look for in this place? (d01)
+-r02 Well shucks!
+-r03 I'm looking for something that will make me pass a test. (d10)
+-r04 I'd like to submit my own work! (d??) [INCOMPLETE]
+-d01 This place is a collection of everything that has ever been written. (d02)
+-d02 Donated by the ones who were willing to, of course. (d03)
+-d03 You can find things from cooking a tasty... gulp... rabbit stew... to the famous dragons and dragonesses. (d04)
+-d04 You might like the latter one. The only reason I keep the first one is all in the name of knowledge. (d05)
+-d05 Unfortunately for you, we don't have a children section but we have an adult section that you can look at at your own risk. (d06)
+-d06 Just promise me one thing. Don't take out anything that belongs here.
+-d10 A test. You don't know what's being tested eh? (d11)
+-d11 The best I can think of is to check the section about supernatural powers. (d12)
+-d12 Honestly, that would be the only way to beat whatever your teacher will throw at you!
+
+This is all that I can write for now. In the next issue, I will write about the impossibly hard test that will require intelligence and physical strength. It is intentional that all questions are not possible to be answered by a single person. I will be reaching out to several people to come up with some. I might write some myself! The player will have to gain a few levels and learn at least one compatible skill to acquire the answers in the test. Also, the NPC's will all have their own name in the future. 
