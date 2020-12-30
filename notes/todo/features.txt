@@ -12,7 +12,6 @@ Currently being worked on:
         -Move
         -Change map
     
-    -A basic game engine
     -Sprites. This includes the player sprites, map sprites, and user interface sprites. I might ask for help with this part when a complete requirement specification arrives.
     
 Future:
@@ -23,5 +22,5 @@ Future:
         -Drop items
     
 Completed:
-    (None yet)
+    -A basic game engine (December 29, 2020)
 

@@ -1,0 +1,35 @@
+Lithio's Codestyle
+
+Hi, please read this text if you are interested in reading the code or contributing!
+
+For all header and source files
+Please include the developer who last worked on the file, and date of modification.
+//Lithio
+//December 25, 2020
+
+Global variable and function names
+Please use lowercase and underscores. Don't use underscores to separate numbered variables. However, there should be few to no cases of calling things a1, a2, a3, etc in this code.
+variable_name1
+variable_name2
+func1
+func2
+
+Classes, structs and typedefs
+Please use camel case for type names and typedefs.
+TypeName
+MyTypedef
+
+Constants and macros
+Please use prefix 'k' and camel case for constant variables. Use all caps for macros.
+kMaxHitValue
+kVersion
+
+MACRO_VARIABLE
+VERSION_NAME
+
+Pointers
+Please place the * on the right side of the declaration
+char *name
+
+Private class member variables
+Please use the suffix '_'for private class member variables, including static variables.
