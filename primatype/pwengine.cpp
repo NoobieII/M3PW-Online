@@ -26,6 +26,7 @@ renderer_(nullptr),
 layer_texture_(),
 layer_src_rect_(),
 layer_dst_rect_(),
+loaded_textures_(),
 mouse_x_(0),
 mouse_y_(0),
 is_left_button_pressed_(false),
@@ -38,13 +39,15 @@ scroll_x_(0),
 scroll_y_(0),
 is_key_pressed_(),
 is_key_lifted_(),
-text_input_()
+text_input_(),
+is_quit_(false)
 {
 }
 
 PWEngine::~PWEngine(){
 	int i;
 	std::map<int, PWObject*>::iterator it;
+	std::map<std::string, SDL_Texture*>::iterator it2;
 	
 	//destroy renderer
 	SDL_DestroyRenderer(renderer_);
@@ -55,6 +58,13 @@ PWEngine::~PWEngine(){
 	//destroy all objects in the game
 	for(it = objects_.begin(); it != objects_.end(); ++it){
 		delete it->second;
+	}
+	
+	//destroy all sprites
+	for(it2 = loaded_textures_.begin(); it2 != loaded_textures_.end(); ++it2){
+		if(it2->second){
+			SDL_DestroyTexture(it2->second);
+		}
 	}
 	
 	IMG_Quit();
@@ -157,27 +167,27 @@ void PWEngine::poll_all_events(){
 	while(SDL_PollEvent(&event)){
 		switch(event.type){
 		case SDL_QUIT:
-			printf("window X button pressed\n");
+			is_quit_ = true;
+			//printf("window X button pressed\n");
 			break;
 		case SDL_MOUSEMOTION:
-			//SDL_GetMouseState(&mouse_x_, &mouse_y_);
 			mouse_x_ = event.motion.x;
 			mouse_y_ = event.motion.y;
-			printf("mouse at (%d, %d)\n", mouse_x_, mouse_y_);
+			//printf("mouse at (%d, %d)\n", mouse_x_, mouse_y_);
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 			switch(event.button.button){
 			case SDL_BUTTON_LEFT:
 				is_left_button_pressed_ = true;
-				printf("mouse left button pressed\n");
+				//printf("mouse left button pressed\n");
 				break;
 			case SDL_BUTTON_RIGHT:
 				is_right_button_pressed_ = true;
-				printf("mouse right button pressed\n");
+				//printf("mouse right button pressed\n");
 				break;
 			case SDL_BUTTON_MIDDLE:
 				is_middle_button_pressed_ = true;
-				printf("mouse middle button pressed\n");
+				//printf("mouse middle button pressed\n");
 				break;
 			}
 			break;
@@ -185,15 +195,15 @@ void PWEngine::poll_all_events(){
 			switch(event.button.button){
 			case SDL_BUTTON_LEFT:
 				is_left_button_lifted_ = true;
-				printf("mouse left button lifted\n");
+				//printf("mouse left button lifted\n");
 				break;
 			case SDL_BUTTON_RIGHT:
 				is_right_button_lifted_ = true;
-				printf("mouse right button lifted\n");
+				//printf("mouse right button lifted\n");
 				break;
 			case SDL_BUTTON_MIDDLE:
 				is_middle_button_lifted_ = true;
-				printf("mouse middle button lifted\n");
+				//printf("mouse middle button lifted\n");
 				break;
 			}
 			break;
@@ -201,26 +211,26 @@ void PWEngine::poll_all_events(){
 			scroll_x_ = event.wheel.x;
 			scroll_y_ = event.wheel.y;
 			
-			printf("mouse scroll event (%d, %d)\n", scroll_x_, scroll_y_);
+			//printf("mouse scroll event (%d, %d)\n", scroll_x_, scroll_y_);
 			break;
 		case SDL_KEYDOWN:
 			is_key_pressed_[SDL_GetKeyName(event.key.keysym.sym)] = true;
-			printf("key %s scancode %s was pressed\n",
-				SDL_GetKeyName(event.key.keysym.sym),
-				SDL_GetScancodeName(event.key.keysym.scancode));
+			//printf("key %s scancode %s was pressed\n",
+				//SDL_GetKeyName(event.key.keysym.sym),
+				//SDL_GetScancodeName(event.key.keysym.scancode));
 			break;
 		case SDL_KEYUP:
 			is_key_lifted_[SDL_GetKeyName(event.key.keysym.sym)] = true;
-			printf("key %s scancode %s was lifted\n",
-				SDL_GetKeyName(event.key.keysym.sym),
-				SDL_GetScancodeName(event.key.keysym.scancode));
+			//printf("key %s scancode %s was lifted\n",
+				//SDL_GetKeyName(event.key.keysym.sym),
+				//SDL_GetScancodeName(event.key.keysym.scancode));
 			break;
 		case SDL_TEXTINPUT:
 			strcat(text_input_, event.text.text);
-			printf("received textinput event, text_input_ = %s\n", text_input_);
+			//printf("received textinput event, text_input_ = %s\n", text_input_);
 			break;
 		case SDL_TEXTEDITING:
-			printf("received textediting event\n");
+			//printf("received textediting event\n");
 			break;
 		}
 	}
@@ -236,6 +246,20 @@ void PWEngine::update_all(){
 	deltatime_ = next_sleep_time_ - last_sleep_time_;
 	last_update_time_ = last_sleep_time_;
 	
+	//destroy any objects waiting to be destroyed.
+	it = objects_.begin();
+	while(it != objects_.end()){
+		object = it->second;
+		
+		if(object && object->is_destroyed()){
+			delete object;
+			objects_.erase(it++);
+		}
+		else{
+			it++;
+		}
+	}
+	
 	//call update() for all objects
 	it = objects_.begin();
 	for(it = objects_.begin(); it != objects_.end(); ++it){
@@ -243,16 +267,6 @@ void PWEngine::update_all(){
 		
 		if(object->is_active()){
 			object->update();
-		}
-	}
-	
-	//destroy any objects waiting to be destroyed.
-	for(it = objects_.begin(); it != objects_.end(); ++it){
-		object = it->second;
-		
-		if(object->is_destroyed()){
-			delete object;
-			objects_.erase(it);
 		}
 	}
 	
@@ -364,22 +378,32 @@ SDL_Texture *PWEngine::load_image(std::string path){
 	SDL_Texture *new_texture = NULL;
 
 	//Load image at specified path
-	SDL_Surface* loaded_surface = IMG_Load(path.c_str());
-	if(loaded_surface == NULL){
-		printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
+	SDL_Surface* loaded_surface = NULL;
+	
+	if(loaded_textures_.find(path) != loaded_textures_.end()){
+		new_texture = loaded_textures_[path];
 	}
 	else{
-		//set colour key to black
-		SDL_SetColorKey(loaded_surface, SDL_TRUE, SDL_MapRGB(loaded_surface->format, 0x00, 0x00, 0x00));
+		loaded_surface = IMG_Load(path.c_str());
 		
-		new_texture = SDL_CreateTextureFromSurface(renderer_, loaded_surface);
-		
-		if(new_texture == NULL){
-			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
+		if(loaded_surface == NULL){
+			printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
 		}
-		
-		//Get rid of old loaded surface
-		SDL_FreeSurface(loaded_surface);
+		else{
+			//set colour key to black
+			SDL_SetColorKey(loaded_surface, SDL_TRUE, SDL_MapRGB(loaded_surface->format, 0x00, 0x00, 0x00));
+			
+			new_texture = SDL_CreateTextureFromSurface(renderer_, loaded_surface);
+			
+			if(new_texture == NULL){
+				printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
+			}
+			
+			//Get rid of old loaded surface
+			SDL_FreeSurface(loaded_surface);
+			
+			loaded_textures_[path] = new_texture;
+		}
 	}
 
 	return new_texture;
@@ -428,4 +452,8 @@ bool PWEngine::is_key_lifted(std::string key){
 
 const char *PWEngine::get_text_input(){
 	return text_input_;
+}
+
+bool PWEngine::is_quit(){
+	return is_quit_;
 }

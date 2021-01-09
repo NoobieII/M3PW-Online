@@ -12,7 +12,6 @@ sprite_(nullptr)
 }
 
 Background::~Background(){
-	SDL_DestroyTexture(sprite_);
 }
 
 //draw the sprite on layer 10

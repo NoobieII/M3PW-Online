@@ -19,7 +19,8 @@ sprite_(nullptr)
 }
 
 Ball::~Ball(){
-	SDL_DestroyTexture(sprite_);
+	//engine handles cleanup now
+	//SDL_DestroyTexture(sprite_);
 }
 	
 //move the ball

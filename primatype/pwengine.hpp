@@ -74,6 +74,9 @@ public:
 	
 	//text input - returns empty string if there is none
 	const char *get_text_input();
+	
+	//returns true if the window X button was pressed
+	bool is_quit();
 private:
 	
 	int deltatime_;
@@ -91,6 +94,8 @@ private:
 	std::vector<SDL_Texture*> layer_texture_[10];
 	std::vector<SDL_Rect> layer_src_rect_[10];
 	std::vector<SDL_Rect> layer_dst_rect_[10];
+	
+	std::map<std::string, SDL_Texture*> loaded_textures_;
 	
 	//mouse position state
 	int mouse_x_;
@@ -115,6 +120,9 @@ private:
 	
 	//text input from keyboard
 	char text_input_[32];
+	
+	//window X button
+	bool is_quit_;
 };
 
 #endif

@@ -10,7 +10,12 @@
 #include "pwobject.hpp"
 
 int main(int argc, char *argv[]){
+	int num_objects;
 	int i;
+	
+	printf("Enter how many objects to create: ");
+	scanf("%d", &num_objects);
+	
 	PWEngine *engine = new PWEngine;
 	
 	if(engine->initialize(800, 600, 30, "Primatype") == -1){
@@ -18,20 +23,22 @@ int main(int argc, char *argv[]){
 	}
 	
 	//initialize a ball object
-	PWObject *ball = new Ball(engine, 0, 5, 0);
 	PWObject *background = new Background(engine);
+	PWObject *ball = nullptr;
 	
-	for(i = 0; i < 300; ++i){
+	for(i = 0; i < num_objects; ++i){
+		ball = new Ball(engine, 0, 5, 0);
+	}
+	
+	while(engine->is_quit() == false){
 		engine->sleep_until_next_frame();
 		engine->poll_all_events();
 		engine->update_all();
 		engine->render();
 	}
-	ball->destroy();
-	background->destroy();
 	
 	delete engine;
 	
-	printf("program terminates.\n");
+	printf("Program terminates.\n");
 	return 0;
 }
