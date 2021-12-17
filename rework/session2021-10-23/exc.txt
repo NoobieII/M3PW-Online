@@ -1,0 +1,7 @@
+Lithio
+October 23, 2021
+
+
+C++ Project Exercise 2
+
+In this exercise, we will be compiling the same program on GCC with the Boost library on the Unix operating systems.

@@ -1,0 +1,1 @@
+g++ aes/aes.c random/mt.c random/random.cpp engine.cpp main_client.cpp packet.cpp -o client.exe -lboost_system-mgw63-1_65_1 -lws2_32 -static

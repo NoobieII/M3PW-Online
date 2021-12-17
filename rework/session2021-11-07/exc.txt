@@ -1,0 +1,1 @@
+This will be a simple program, not built on top of the existing codes, for testing out NPC functionality.

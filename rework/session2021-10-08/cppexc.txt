@@ -1,0 +1,82 @@
+October 08, 2021
+
+C++ Exercise for writing portable game code #1
+
+We will be designing a simplified game engine in C++ that has sleeping capabilities and basic TCP networking. The engine will use console window graphics. The engine should be used like this:
+
+int main(int argc, char *argv[]){
+	//create the engine
+	PWEngine *engine = new PWEngine;
+	
+	//initialize with screen width, height, framerate, window name
+	if(engine->initialize(80, 30, 3, "Primatype") == -1){
+		return -1;
+	}
+	if(engine->connect("10.0.0.173", 16555) == -1){
+		return -1;
+	}
+	
+	int i = 0;
+	
+	//run until the X button is pressed
+	while(i < 100){
+		engine->sleep_until_next_frame();
+		engine->poll_all_events();
+		engine->update_all();
+		
+		++i;
+	}
+	
+	delete engine;
+	
+	printf("Program terminates.\n");
+	return 0;
+}
+
+Initializing the engine will do nothing for now.
+Making the connection will initialize a socket object. Specific operating system API will be needed to be researched.
+
+The function sleep_until_next_frame() will use operating system specific function calls to pause the program to save CPU usage.
+The poll_all_events() function will currently poll the socket connection (if configured) and save the binary data received.
+The update_all() function will currently handle the received data (if socket configured) and send the binary data written, in that order. Currently there are no game objects that write binary data, so the update_all() function will simply write a random number to the send buffer.
+
+The Server
+
+On the other side, the server will be designed rather simply.
+
+int main(int argc, char *argv[]){
+	PWServer *server = new PWServer;
+	
+	//poll 10 times per second
+	if(server->initialize(10) == -1){
+		return -1;
+	}
+	
+	//start accepting connections
+	if(server->start_accept("10.0.0.173", 16555) == -1){
+		return -1;
+	}
+	
+	while(quit == false){
+		server->sleep_until_next_frame();
+		
+		//check for connections
+		server->poll_acceptor();
+		
+		//poll all client sessions and respond to incoming data
+		server->poll_all_sessions();
+		
+	}
+	
+	server->shutdown();
+	
+	delete server;
+	
+	return 0;
+}
+
+The initialize(10) function will set the number of polls per second to 10. It will return -1 upon failure, but for now, it will always return 0.
+The start_accept() function will bind an acceptor to a port and will return 0 upon success. No connection will be made yet.
+The sleep_until_next_frame() function will make the program sleep for a short time, to save CPU usage. Use the same implementation as used in the client.
+The poll_acceptor() function will check the acceptor object if any TCP connection pending.
+

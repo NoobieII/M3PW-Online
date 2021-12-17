@@ -1,0 +1,16 @@
+Lithio (The developer's pseudonym)
+November 28, 2021
+
+In this exercise, we will be obtaining keyboard input events. The engine will provide the following functions:
+
+	bool is_key_pressed(int keycode);
+	bool is_key_lifted(int keycode);
+	
+	//returns values corresponding to the direction of the arrow keys pressed. Left is -1, up is -1, but pressing two orthogonal direction keys makes the functions return an absolute value of 0.71.
+	float get_arrow_direction_x();
+	float get_arrow_direction_y();
+	
+	//text input - returns empty string if there is none
+	const char *get_text_input();
+
+We will modify the poll_all_events to account for key events. The Windows API will be used here. Virtual key codes will be used for portability, not scan codes. So hopefully Linux offers the same codes.

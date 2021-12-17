@@ -1,0 +1,1 @@
+g++ aes/aes.c random/mt.c random/random.cpp main_server.cpp packet.cpp server.cpp session.cpp -o server.exe -lboost_system-mgw63-1_65_1 -lboost_thread-mgw63-mt-1_65_1 -lboost_date_time-mgw63-mt-1_65_1 -lws2_32 -static

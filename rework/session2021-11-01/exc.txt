@@ -1,0 +1,32 @@
+Lithio
+November 1/2, 2021
+
+C++ Project exercise 3
+
+In this exercise, we will be obtaining keyboard input events. We want the engine to implement the following functions:
+	
+	//time difference in milliseconds since last update
+	int deltatime();
+	
+	//number of game ticks since the start of the program
+	int ticks();
+	
+
+Create a program that reads the virtual scancode of the character pressed on the client and sends it to the server. The server echoes the message back to the client.
+
+At the end of creating the code, make a program that TESTS the functions, that you can use later!
+
+int main(){
+	//test wait
+	//test deltatime
+	//test update
+	//test ticks
+	
+	//show an error message if the expected behaviour does not happen!
+	
+	//end of program
+	return 0;
+}
+
+
+	

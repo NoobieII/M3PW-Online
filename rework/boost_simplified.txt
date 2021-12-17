@@ -1,0 +1,17 @@
+With the boost tarball in the current directory, type:
+tar --bzip2 xf boost_1_77_0.tar.bz2
+
+In the same directory, type:
+cd boost_1_77_0
+
+Install gcc/g++ if not yet installed.
+
+Change the "${B2_CXX}" to "g++" in tools/build/src/engine/build.sh, on line 473
+
+With the gcc toolset, type
+./bootstrap.sh --prefix=installation --with-toolset=cxx
+
+Rename project-config.jam to cxx.jam
+
+Run the command:
+./b2 --build-type= toolset=gcc link=static install
