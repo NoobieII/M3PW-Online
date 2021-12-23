@@ -1,0 +1,28 @@
+Features - December 22, 2021
+
+This is a list of features that are completed, currently being worked on and to be completed in the future.
+
+Currently being worked on:
+    -Story and gameplay (see recent files in concept folder)
+    -Better digitized of the paper scans containing pertinent information
+    
+Future:
+    In the menu screen, the player can:
+        -Log in
+        -Create account
+
+    In the map, the player can:
+        -Fly
+        -Move
+        -Change map
+    
+    -Sprites. This includes the player sprites, map sprites, and user interface sprites. I might ask for help with this part when a complete requirement specification arrives.
+    In the map, the player can:
+        -Talk to NPC's
+        -Pick up items
+        -Access the inventory screen
+        -Drop items
+    
+Completed:
+    -A basic game engine (December 29, 2020)
+

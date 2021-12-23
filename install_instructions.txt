@@ -1,0 +1,17 @@
+Installation - December 22, 2021
+
+The code may be compiled on the GCC compiler. For the programs in the primatype folder, have SDL2 and Make installed. For the programs in the rework folder, have the Boost C++ library installed. 
+
+PRIMATYPE FOLDER:
+Modify the makefile to have the correct paths for INCLUDE_PATHS and LIBRARY_PATHS.
+
+Open a shell window in the primatype folder.
+
+Build the respective project.
+
+On Linux, testing is yet to come.
+
+REWORK FOLDER:
+Modify the compile.txt folder to have the correct include and library paths.
+
+Copy and run the compile command for your operating system.
