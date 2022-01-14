@@ -1,0 +1,20 @@
+A Retrospective
+January 01, 2022
+
+This is a retrospective of my practices in coding. What I have learned to do and not to do in programming will be listed here.
+
+1.1 Prioritize writing and worldbuilding over coding
+
+I shouldn't proceed to code too soon. The consequence is wasted time because the prototype only supports a small part of the game, which may also be removed later.
+
+1.2 Come up with the rules of the game
+
+This comes to defining how the game works before coding. Most programs should be well defined before they get coded. This is somewhat like the rule above, so it is very important!
+
+1.3 Things that are effective currently
+
+Making scripts and drawings are good to entice people into the story of my game. When other people look forward to see my work, it motivates me. It is also good practice for my drawing skills! Showing other people my work is a plus.
+
+1.4 Things I should do
+
+I should use technology more often. Writing things is nice, but a good copy should be made on the computer. I need to be organized better. The 50 pages of notes can be shortened considerably. Only about 10 pages of my old notes will remain relevant. The first step I will take is to type the relevant notes.

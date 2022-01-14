@@ -1,0 +1,43 @@
+The great digitization
+
+Game Mechanics
+January 02, 2022
+
+Table of contents
+
+1. Genre
+2. Movement
+3. Attacking
+4. NPC Dialogue
+
+1. Genre
+
+The game is a multiplayer online RPG (p. 6).
+
+2. Movement
+
+The game is in a top-down perspective. There will be non-discrete positions in the game (p. 5).
+
+3. Attacking
+
+Attacks will be asynchronous and long range attacks will target by position and not lock on enemies (p. 4).
+
+4. NPC Dialogue
+
+NPC dialogue will work in the following manner
+
+1. Player double clicks NPC
+2. NPC's first dialogue will open
+3. Dialogue's open condition will be checked
+4. If met, the dialogue action will be run
+5. Go to step 8
+6. If not met, the alternative dialogue will open
+7. Go to step 3
+8. The message text will show
+9. The options will show only if their open condition is met.
+10. The player selects the option.
+11. If the option has no dialogue number, go to step 14
+12. The option's dialogue will open
+13. Go to step 3
+14. End
+
