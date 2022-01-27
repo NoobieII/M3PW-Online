@@ -1,0 +1,37 @@
+Crow [Dragon Encampment] NPC
+
+1.
+Mmm ... ouch. Please don't hurt me!
+
+>I won't (go to 2)
+ I will
+
+*******************
+
+2.
+Of all the young kids I have seen, you seem to be a new hope.
+
+3.
+Mmm... You say you need to go somewhere? I can take you to places!
+
+>Booyah!                                          (go to 4)
+ Nah, I'm sorry. I don't take ride from strangers (go to 5)
+
+4.
+Mmm... ! Where to?
+
+>[Cities you've unlocked] (go to 6)
+ Cancel                   (go to 5)
+
+5.
+Hehe... surely you've gotten other things to do. Take your time.
+
+6.
+Hold on to my rope!
+
+
+
+Notes:
+Entry point:
+1 if it is the first time talking
+3 if you have read 2

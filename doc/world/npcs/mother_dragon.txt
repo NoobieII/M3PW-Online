@@ -16,14 +16,43 @@ Mother Dragon NPC
 (She nudges you with her nose)
 
 5.
-I want you to catch some food.
-
-*******************
+I want you to catch some food and come back.
 
 6.
-Go outside and play!
+You must be tired. (She nudges you with her snout)
+
+7.
+Have a rest.
+.....
 
 *******************
 
-7.
-You sure have grown a lot.
+8.
+Nice job, tonight is going to be a good dinner. (go to 6)
+
+*******************
+
+9.
+Oh, $PLAYERNAME, what's on your mind?
+
+>I need a rest (go to 6)
+ I'm bored     (go to 10)
+
+10.
+Go outside and play!
+
+11.
+Oh? You want to play with me?
+
+12.
+(She licks you)
+
+13.
+I'd love to but I have some biddings to make for work...
+
+Notes:
+Entry point:
+1 if it is the first time talking
+5 if you are doing the quest
+8 if you have completed the quest
+9 if you have read 8

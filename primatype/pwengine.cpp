@@ -10,6 +10,15 @@
 #include <cstdio> //for printf
 #include <cstring> //for strlen
 
+//these includes are for timing the sleeping correctly
+#if (defined(unix) || defined(__unix) || defined(__unix__))
+#include "unistd.h"
+#endif
+
+#if defined(_WIN32)
+#include "windows.h"
+#endif
+
 #include <SDL_image.h>
 
 #include "pwengine.hpp"
@@ -132,8 +141,19 @@ int PWEngine::initialize(int screen_width, int screen_height, int framerate, con
 	//initialize text
 	charset_ = load_image("sprites/charset2.png");
 	
-	framerate_ = framerate;
+	#if (defined(unix) || defined(__unix) || defined(__unix__))
+	struct timespec tp;
+	clock_gettime(CLOCK_MONOTONIC, &tp);
+	
+	last_update_time_ = tp.tv_sec * 1000 + tp.tv_nsec / 1000000;
+	#endif
+	
+	#if defined(_WIN32)
 	last_update_time_ = clock() / (CLOCKS_PER_SEC / 1000);
+	#endif
+	
+	//initialize time
+	framerate_ = framerate;
 	last_sleep_time_ = last_update_time_;
 	next_sleep_time_ = last_update_time_ + (1000 / framerate_);
 	
@@ -638,11 +658,29 @@ void PWEngine::render(){
 }
 
 void PWEngine::sleep_until_next_frame(){
-	//if the current time is less than the time for next frame
-	int current_time = clock() / (CLOCKS_PER_SEC / 1000);
+	int current_time;
+	
+	#if (defined(unix) || defined(__unix) || defined(__unix__))
+	struct timespec tp;
+	clock_gettime(CLOCK_MONOTONIC, &tp);
+	
+	current_time = tp.tv_sec * 1000 + tp.tv_nsec / 1000000;
+	#endif
+	
+	#if defined(_WIN32)
+	current_time = clock() / (CLOCKS_PER_SEC / 1000);
+	#endif
 	
 	if(current_time < next_sleep_time_){
-		SDL_Delay(next_sleep_time_ - current_time);
+		//linux specific
+		#if (defined(unix) || defined(__unix) || defined(__unix__))
+		usleep((next_sleep_time_ - current_time) * 1000);
+		#endif
+
+		//windows specific
+		#if defined(_WIN32)
+		Sleep(next_sleep_time_ - current_time);
+		#endif
 	}
 	
 	last_sleep_time_ = next_sleep_time_;

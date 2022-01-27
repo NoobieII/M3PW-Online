@@ -1,19 +1,81 @@
-December 22, 2021
+PRIMATYPE GAME SYNOPSIS
 
-Here is the latest synopsis of the game's direction.
+Lithio (the developer's pseudonym)
 
-INTRODUCTION
+Version 0.2 January 20, 2022
 
-You get born as a dragon (fire, ice, poison or no element) and certain cities and places have people who teach you how to use your special abilities. Along the way, the game will teach about technologiese that have changed the world, and technologies that will change the world. The goal of this game is to make the player have a more insightful technical mindset after playing. The target audience is older teens and adults, with and without technical knowledge.
 
-The gamepley will have a top-down perspective, similar to some popular games like the Legend of Zelda or Runescape. The game will have combat mechanics similar to those of Runescape or Ragnarok Online. The game will be a multiplayer RPG.
+REVISION HISTORY
 
-GAMEPLAY EXAMPLES
+Version Date       Description of Changes
+0.1     12/22/2021 First draft
+0.2     01/20/2022 Added revision history, front page, section numbers,
+                   and many other organization methods
 
-Dragons learn special abilities after reaching a certain level and by talking to the NPC (non playable character) who teaches the ability. For example, there is a village of foxes, west of the town where you are raised. One of the foxes teach you how to shoot fire.
 
-One NPC named Yoku is cynical and wants to leave the world. She takes it literally and gets the idea of shooting herself out of Earth's atmosphere and never coming back. She has built a mechanism that can launch her as high as she would like, given a source of energy. Here, the player can learn about escape velocity and the energy needed.
+TABLE OF CONTENTS
 
-CONCLUSION AND FUTURE
+Revision History
+Table of Contents
+Terms and Abbreviations
+1 About This Document
+2 Game Audience
+3 Game Design
+  3.1 World
+  3.2 Themes
+  3.3 Gameplay Mechanics
+  3.4 Inspirations
+References
 
-The gameplay is still being written. The game has been in this early stage of development for five years. 
+
+TERMS AND ABBREVIATIONS
+
+Primatype, M3PW: codename for this game project
+Map: a space in game where the player can move and interact with things
+
+
+1 ABOUT THIS DOCUMENT
+
+Purpose
+The purpose of this document is to give an understanding of how the game is planned to look like. The world, themes and gameplay mechanics of the game will be described.
+
+
+2 GAME AUDIENCE
+
+The target audience for this game is older teenagers aged around 17 and older. This decision was made because younger audiences are more inclined to play games that older audiences like. However, the reverse is usually not true.
+
+
+3 GAME DESIGN
+
+The world of the game, themes and gameplay mechanics will be described
+
+
+3.1 WORLD
+
+The world takes place in a loosely-defined place resembling our planet Earth. The time is post-apocalyptic - millions of years after humans have gone extinct. There are remnants of man-made technology. The current life forms are plants and animals, both real and mythical. The player is born as a dragon in a quiet region where not much technological innovation is present. There are multiple cities in the region with different species living in them.
+
+
+3.2 THEMES
+
+This game will have themes of technology and day-to-day interactions between dragons and the other species. The player will play as a dragon and he will have to communicate with other species in order to progress through the game.
+
+This game will teach about technologies that have changed the world, and will change the world. The average player may not have a technical mindset at the point of joining but he will walk out with a better understanding [1]. Technologies in this game will be public transportation in the form of centipede trains and eugenics in the form of dragons being born with certain traits, for example.
+
+
+3.3 GAMEPLAY MECHANICS
+
+The player will be controlled from a 2D top-down perspective. Combat interactions will be in real-time. When a single player prototype is successfully made, a multiplayer prototype will be made. There are short term objectives and long term objectives to the game.
+
+In the 2D top-down perspective, the player can move vertically and horizontally.
+
+Between cities, there will be a number of maps where the player must make his way through enemies. The player has appropriate attacks based on the type of dragon species, such as fireball for fire dragons. Enemies will hurt the player upon touching them.
+
+
+3.4 INSPIRATIONS
+
+The gameplay mechanics take inspiration from a few RPG's such as RuneScape, MapleStory and Ragnarok online. The transportation system and travelling takes inspiration from platformer games like Hollow Knight. The top-down perspective and level design will take inspiration from RuneScape, but the real time combat mechanics take more inspiration from Ragnarok Online. 
+
+
+REFERENCES
+
+[1] Primatype paper notes, page 49

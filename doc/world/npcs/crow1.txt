@@ -1,0 +1,57 @@
+Crow [Mother Dragon Cave] NPC
+
+1.
+Thank goodness, a dragon!
+
+2.
+Our drunken crow has gotten caught up with the foxes again and they won't leave him alone.
+
+3.
+To be honest, though, I think he's kind of dumb. Wait, don't tell him I said that!
+
+4.
+Could you help one of us fellow crows? We promise to repay you.
+
+>Yes (go to 5)
+ No  (go to 6)
+
+5.
+Thank you! Please kill 3 foxes and come back when you're done!
+
+*******************
+
+6.
+Alright, sorry for bugging you.
+
+*******************
+
+7.
+Aye, you did a good job fending off those foxes.
+
+8.
+...By fending off, I mean killing! ...
+
+9.
+I'm the youngest of the crows. I can take you to places.
+
+10.
+Where'd you like to go?
+
+>[Cities you've unlocked] (go to 12)
+ Cancel                   (go to 11)
+
+11.
+Yeah! There's still a lot to do around here.
+
+12.
+Off we go!
+
+
+
+Notes:
+Entry point:
+1 if it is the first time talking
+4 if you haven't accepted the quest to kill 3 foxes
+5 if you have accepted the quest
+7 if you have completed the quest
+9 if you have already read 7/8

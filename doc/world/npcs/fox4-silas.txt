@@ -1,0 +1,45 @@
+Fox 4 NPC
+
+1.
+Hi, how are you? (He turns away before letting you answer)
+
+*******************
+
+2.
+What do you want from us so badly?
+
+>I'm looking for a book
+ I'm looking for a fight
+
+3.
+Franku asks a dragon to help him? Is he out of his mind?
+
+4.
+He needs to face reality that all the studying he does all day is pointless.
+
+5.
+All it does is make our grades at school lower!
+
+6.
+The book is gone forever.
+
+*******************
+
+7.
+You little dragon, are you looking for a fight?
+
+>I'm looking for a fight (go to 8)
+ Cancel
+
+*******************
+
+8.
+I'm going to beat you up.
+
+
+
+Notes:
+Entry point:
+1 if it is the first time talking
+2 if you have read 1
+7 if you have read 3

@@ -15,6 +15,7 @@ int main(int argc, char *argv[]){
 	
 	//create a player
 	PWObject *player = new Player(engine);
+	PWObject *player2 = new Player(engine);
 	
 	//test, creating blue background
 	PWSprite *blue_bg = engine->load_sprite(
@@ -28,7 +29,7 @@ int main(int argc, char *argv[]){
 	);
 	
 	//test, create button
-	PWButton log_in_button(
+	PWButton *log_in_button = new PWButton(
 		490,
 		290,
 		80,
@@ -57,7 +58,7 @@ int main(int argc, char *argv[]){
 		
 		engine->render();
 	}
-	
+	printf("deleting engine...\n");
 	delete engine;
 	
 	printf("Program terminates.\n");

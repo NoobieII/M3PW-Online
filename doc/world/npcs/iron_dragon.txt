@@ -1,0 +1,23 @@
+Iron Dragon [Dragon Encampment]
+
+1.
+Howdy, what can I do for you?
+
+>Buy       (go to 2)
+ Sell      (go to 2)
+ I'm bored (go to 3)
+ End chat
+
+2.
+Sorry, I'm currently not buying or selling anything right now. There's a shortage of dragons here.
+
+*******************
+
+3.
+Yeah, I'm not sure what to do either... I wonder how my brother is doing. He decided to go live in the city where the technology has been thriving...
+
+
+
+Notes:
+Entry point:
+1 for all cases

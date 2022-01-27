@@ -26,16 +26,18 @@ TEST_TEXTBOX_OBJS = test_textbox.cpp pwtextbox.cpp pwengine.cpp pwobject.cpp spa
 #which compiler we're using
 CC = g++
 
-#include paths for SDL on my WINDOWS computer
-INCLUDE_PATHS = -IC:/MinGW/include/SDL2
-
-#library paths for SDL on my WINDOWS computer
-LIBRARY_PATHS = -LC:/MinGW/lib/SDL2
-
 #compiler flags
 
-#linker flags
-LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
+#Windows
+#LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
+#INCLUDE_PATHS = -IC:/MinGW/include/SDL2
+#LIBRARY_PATHS = -LC:/MinGW/lib/SDL2
+
+#Linux
+LINKER_FLAGS = -lSDL2 -lSDL2_image
+INCLUDE_PATHS = -I/usr/local/include/SDL2/
+LIBRARY_PATHS = -L/usr/local/lib/
+
 
 primatype : $(OBJS)
 	$(CC) $(OBJS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(LINKER_FLAGS) -o $(OBJ_NAME) 

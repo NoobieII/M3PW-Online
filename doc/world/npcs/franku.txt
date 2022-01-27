@@ -1,0 +1,31 @@
+Franku NPC
+
+1.
+*Sniff*
+
+2.
+Idiots... What idiots! They took my book away from me. It's not my book either. It's the librarian's. I'll probably get banned if I don't return it, like those foxes already.
+
+>I'll help you get the book (go to 3)
+ You're on your own
+
+*******************
+
+3.
+Thanks... you dragons actually seem pretty nice.
+
+*******************
+
+4.
+The book? It's gone? Idiots...
+
+5.
+I'll be at the rabbit hole library.
+
+
+
+Notes:
+Entry point:
+1 if it is the first time talking
+3 if you offered to help get the book
+4 if you have fought the foxes who stole the book

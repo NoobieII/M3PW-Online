@@ -1,0 +1,80 @@
+Centipede Train NPC
+
+1.
+Hi, I'm train #1001. Have I been running satisfactorily?
+
+>Yes (go to 2)
+ No
+
+*******************
+
+2.
+I'm glad to hear that.
+
+3.
+Is there something that you need?
+
+>I've lost something                           (go to 4)
+ Is there something that I can learn from you? (go to 6)
+ No thanks
+
+4.
+You've lost something? Here are some things that I've picked from the ground.
+
+>[Items] (go to 5)
+ Cancel
+
+*******************
+
+5.
+Here you go.
+
+*******************
+
+6. (condition: player is a fire/ice/poison dragon. else go to 7)
+Hmm... You seem to know a lot already. There's nothing I have to teach you.
+
+*******************
+
+7.
+Hmm... What do I know?
+
+8.
+Hmm... All I really do is move from one place to another? When I retire, I'll be put to rest.
+
+>Where did you come from? (go to 9)
+ Never mind
+
+*******************
+
+9.
+Hmm... Sorry it's taking a while... I don't quite know?
+
+>What's your name? (go to 10)
+ Never mind
+
+*******************
+
+10.
+What's my name? it's #1001? Your name? $PLAYERNAME sounds like a nice name.
+
+11.
+You tell me that you want to learn something from me? I suppose we know how to keep a strong stance against obstacles.
+
+12.
+Unfortunately my schedule is set in stone, but you can maybe talk to another centipede during their final moments before retirement.
+
+13.
+Keep an eye out for #1023. You'll find him at the scrapyard at 10pm UTC.
+
+14.
+Nice talking with you. See you later, hopefully.
+
+
+
+Notes:
+Entry point:
+1 for all cases
+
+Time and fleet numbers:
+The game (or server) will decide on how the numbers and times are chosen. #1023 and 10pm are examples.

@@ -1,0 +1,74 @@
+Fire Breathing Rabbit
+
+1.
+You lost my book? How so?
+
+2. (Franku)
+Some foxes took it away from me and destroyed it.
+
+3.
+Well... in the end, you still lost it.
+
+4. (Franku)
+So... you mean it is over?
+
+5.
+No, Franku, of course not.
+
+6.
+Unlike most foxes your age, you show a great interest in the books that I brought to this library.
+
+7.
+I wouldn't ever think of banning you from my library.
+
+8.
+However,
+
+9.
+You let them take away the book so I think you should find someone who can teach you how to fight.
+
+10.
+Look at me, I'm a fire breathing rabbit!
+
+11.
+Go see the old fire fox in the heart of our village. I'll give your dragon friend permission to enter the village.
+
+12.
+Your name's $PLAYERNAME? Ah, it's nice to meet you.
+
+13.
+Thanks for trying to help me and Franku recover the book.
+
+*******************
+
+14.
+You should be able to enter the foxes' village now.
+
+*******************
+
+15.
+Hey $PLAYERNAME. Can I do anything for you?
+
+>What do people look for in this place? (go to 16)
+ I'd like to submit my own work
+ Cancel
+
+*******************
+
+17.
+This place is a collection of everything that has ever been written. All donated books.
+
+18.
+You can find things from tasty rabbit stews to famous dragons and dragonesses. You might like the latter one.
+
+19.
+I keep these all for the sake of knowledge. Just don't take anything without my knowing.
+
+
+
+Notes:
+Entry point:
+1 if it is the first time talking
+11 if you have read 10
+14 if you have read 13
+15 if you have reached the foxes' village
