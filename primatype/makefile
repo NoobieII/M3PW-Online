@@ -29,14 +29,14 @@ CC = g++
 #compiler flags
 
 #Windows
-#LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
-#INCLUDE_PATHS = -IC:/MinGW/include/SDL2
-#LIBRARY_PATHS = -LC:/MinGW/lib/SDL2
+LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
+INCLUDE_PATHS = -Iinclude/windows/SDL2
+LIBRARY_PATHS = -Llib/windows
 
 #Linux
-LINKER_FLAGS = -lSDL2 -lSDL2_image
-INCLUDE_PATHS = -I/usr/local/include/SDL2/
-LIBRARY_PATHS = -L/usr/local/lib/
+#LINKER_FLAGS = -lSDL2 -lSDL2_image
+#INCLUDE_PATHS = -I/usr/local/include/SDL2/
+#LIBRARY_PATHS = -L/usr/local/lib/
 
 
 primatype : $(OBJS)

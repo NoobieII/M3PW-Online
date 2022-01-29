@@ -1,15 +1,17 @@
 Installation - December 22, 2021
 
-The code may be compiled on the GCC compiler. For the programs in the primatype folder, have SDL2 and Make installed. For the programs in the rework folder, have the Boost C++ library installed. 
+The code may be compiled on the GCC compiler. For the programs in the rework folder, have the Boost C++ library installed. 
 
 PRIMATYPE FOLDER:
-Modify the makefile to have the correct paths for INCLUDE_PATHS and LIBRARY_PATHS.
+Windows:
+    1. Type "make primatype" in the command line.
 
-Open a shell window in the primatype folder.
-
-Build the respective project.
-
-On Linux, testing is yet to come.
+Linux:
+    1. Install SDL2. Go to the website https://www.libsdl.org/download-2.0.php and download the source code package.
+    2. Install the SDL2 image extension source code package at https://www.libsdl.org/projects/SDL_image/#source
+    3. Run "sudo ldconfig"
+    4. Modify the include and library paths if necessary.
+    5. Type "make primatype" in the command line.
 
 REWORK FOLDER:
 Modify the compile.txt folder to have the correct include and library paths.
