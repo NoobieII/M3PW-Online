@@ -1,0 +1,1 @@
+This is a prototype for testing basic game functionality.

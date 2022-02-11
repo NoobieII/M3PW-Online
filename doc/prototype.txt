@@ -1,0 +1,91 @@
+PRIMATYPE PROTOTYPE
+
+Lithio (the developer's pseudonym)
+
+Version 0.1 February 05, 2022
+
+
+REVISION HISTORY
+
+Version Date       Description
+0.1     02/05/2022 First Draft
+
+
+TABLE OF CONTENTS
+
+Revision History
+Table of Contents
+Terms and Abbreviations
+1 About This Document
+2 Prototype Features
+  2.1 Gameplay Mechanics
+  2.2 Technical Specifications
+3 Implementation
+4 Future Versions
+References
+
+
+2 PROTOTYPE FEATURES
+
+What to expect from the prototype is discussed here.
+
+
+2.1 GAMEPLAY MECHANICS
+
+The prototype will have a map screen where the player can move around and collide with map objects. Players and and monsters are not fixed on a tile grid but map objects are. The player moves from map to map by walking into a portal object. The player will also collide with the map boundries if there are no map objects. Players have limited health and must strategically attack monsters while avoiding getting hit. Hitting monsters will push them back. The player will get pushed back from being hit. Losing too much life will result in the game being over.
+
+From the description above, there are a few map screens; map objects, portals and monsters contained within each map; a combat system; a collision system; and a map warping system.
+
+
+2.2 TECHNICAL SPECIFICATIONS
+
+The prototype will be coded in the graphical C++ primatype engine developed throughout last year. Networking capabilities will not be included in the project. A new class called Space will be introduced to implement collision detection and smooth movement calculations. The window resolution is 640x480 using simple low effort sprite graphics.
+
+If time permits, a console window version will be made. The SDL2 library will be used to handle input.
+
+
+3 IMPLEMENTATION
+
+A single PNG image will contain a sprite map for the various elements needed for this prototype. Each map square is 64x64 pixels wide. 
+
+The map data is stored as a text file containing integer values for collision and appearance of each tile. The collision is determined by the last bit (odd value means the player can't pass through the object). The appearance is determined by the rest of the bits.
+
+Map 0 is the mother dragon cave.
+Tile 0 is cave floor
+Tile 1 is cave wall
+
+Map 1 is outside the cave.
+Tile 2 is outside sky
+Tile 3 is outside wall
+Tile 4 is outside ground
+
+Portals will be implemented by hard coding. They will have a position, dimensions, map destination, and destination position.
+
+The game will run as the following:
+1. The player runs the game application.
+2. The game starts in the mother dragon cave (map 0).
+3. The player moves freely.
+4. The game changes to a map transition state when entering a portal.
+5. The player is placed in a different map
+6. The game changes back to the main gameplay state.
+7. The player's HP and EXP is indicated
+
+Combat is implemented as the following:
+1. The player moves within a certain range of a monster.
+2. The monster starts moving towards the player.
+3. The monster makes an attack when close enough.
+4. The player and monster's attack will push the opponent back
+5. There will be a damage display after each attack.
+6. The monster disappears when its HP is 0.
+7. If you lose all your HP, you die. There is a death message and you can't move.
+8. The monsters' attacks are all avoidable using strategy.
+
+For more details on the game execution, refer to the figures.
+
+The following sprites are needed:
+1. A player dragon sprite (64x64)
+2. 
+
+4 FUTURE REVISIONS
+
+There will be NPC's to talk to, more maps to access, a quest system (hopefully!).
