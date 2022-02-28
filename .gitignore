@@ -1,2 +1,4 @@
 commit-message.txt
 doc/world/map.kra
+rework/*/*.dll
+rework/*/*.exe

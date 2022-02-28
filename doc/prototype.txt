@@ -2,13 +2,14 @@ PRIMATYPE PROTOTYPE
 
 Lithio (the developer's pseudonym)
 
-Version 0.1 February 05, 2022
+Version 0.2 February 26, 2022
 
 
 REVISION HISTORY
 
 Version Date       Description
 0.1     02/05/2022 First Draft
+0.2     02/26/2022 Revising Implementation section
 
 
 TABLE OF CONTENTS
@@ -21,6 +22,10 @@ Terms and Abbreviations
   2.1 Gameplay Mechanics
   2.2 Technical Specifications
 3 Implementation
+  3.1 Maps
+  3.2 Instantiation and Execution
+  3.3 Player Movement
+  3.4 Camera
 4 Future Versions
 References
 
@@ -46,20 +51,27 @@ If time permits, a console window version will be made. The SDL2 library will be
 
 3 IMPLEMENTATION
 
+
+3.1 MAPS
+
 A single PNG image will contain a sprite map for the various elements needed for this prototype. Each map square is 64x64 pixels wide. 
 
-The map data is stored as a text file containing integer values for collision and appearance of each tile. The collision is determined by the last bit (odd value means the player can't pass through the object). The appearance is determined by the rest of the bits.
+The map data is stored as a text file containing integer values for each tile in the map. The first two integers in the file are the width and height of the map. The next width*height integers contain tile data.
+
+Tile data is calculated: 2 * tile id + collision ? 1:0
 
 Map 0 is the mother dragon cave.
+Map 1 is outside the cave.
+
 Tile 0 is cave floor
 Tile 1 is cave wall
-
-Map 1 is outside the cave.
 Tile 2 is outside sky
 Tile 3 is outside wall
 Tile 4 is outside ground
 
 Portals will be implemented by hard coding. They will have a position, dimensions, map destination, and destination position.
+
+3.2 INSTANTIATION AND EXECUTION
 
 The game will run as the following:
 1. The player runs the game application.
@@ -69,6 +81,11 @@ The game will run as the following:
 5. The player is placed in a different map
 6. The game changes back to the main gameplay state.
 7. The player's HP and EXP is indicated
+
+There will be a separate class called MapTransition. There will always be one instance of MapTransition. MapTransition will be invoked by the player when the player uses a portal and the following process will occur:
+1. MapTransition disables the player and map instances.
+2. MapTransition unloads the map and loads the destination map
+3. MapTransition enables the player and map.
 
 Combat is implemented as the following:
 1. The player moves within a certain range of a monster.
@@ -80,11 +97,28 @@ Combat is implemented as the following:
 7. If you lose all your HP, you die. There is a death message and you can't move.
 8. The monsters' attacks are all avoidable using strategy.
 
-For more details on the game execution, refer to the figures.
 
-The following sprites are needed:
-1. A player dragon sprite (64x64)
-2. 
+3.3 PLAYER MOVEMENT
+
+The player moves at 3 tiles per second. The player's speed has a relaxation time of 0.5 seconds. The movement is calculated using the Space class using the velocity verlet method. 
+
+
+3.4 CAMERA
+
+There is an offset on the camera based on player position. Each offset component is determined as:
+
+map size * tile size < screen size:
+offset = (screen size - map size * tile size) / 2
+
+player midpoint < screen size / 2:
+offset = 0
+
+player midpoint > map size * tile size - screen size / 2:
+offset = map size * tile size - screen size / 2
+
+default:
+offset = player midpoint - screen dimensions / 2
+
 
 4 FUTURE REVISIONS
 
