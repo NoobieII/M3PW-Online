@@ -6,15 +6,16 @@
 
 #include "pwengine.hpp"
 #include "pwobject.hpp"
+#include "space.hpp"
 #include <vector>
 #include <map>
 
+class MapTransition;
 //class Mob;
 class Player;
 
 struct Portal{
-	PWVec2 pos;
-	PWVec2 dim;
+	Space space;
 	PWVec2 dest_pos;
 	int dest_map;
 };
@@ -29,6 +30,7 @@ public:
 	
 	void load(int map_id);
 	void set_player(Player *p);
+	void set_map_transition(MapTransition *mt);
 	
 	int get_width();
 	int get_height();
@@ -41,6 +43,7 @@ private:
 	std::vector<Portal> portals_;
 	std::map<int, PWSprite*> sprites_;
 	Player *player_;
+	MapTransition *map_transition_;
 };
 
 #endif

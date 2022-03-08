@@ -70,7 +70,7 @@ void Player::update(){
 	
 	//draw the player on layer 1
 	offset = camera::offset(this);
-	//printf("offset = %f, %f position = %f, %f\n", offset.x, offset.y, space_.pos.x, space_.pos.y);
+	//printf("offset = %f, %f position = %f, %f   ", offset.x, offset.y, space_.pos.x, space_.pos.y);
 	//printf("movement = %f, %f\n", movement.x, movement.y);
 	//printf("midpoint = %f, %f\n", space_.midpoint().x, space_.midpoint().y);
 	engine_->draw(sprite_, space_.pos.x + offset.x - 8, space_.pos.y + offset.y - 8, 1);
@@ -82,7 +82,11 @@ const Space &Player::get_space(){
 
 void Player::set_position(int x, int y){
 	space_.stop_and_undo();
-	space_.pos = PWVec2((float)x, (float)y);
+	space_.reset_position(PWVec2((float)x, (float)y));
+}
+
+void Player::set_position(PWVec2 pos){
+	space_.reset_position(pos);
 }
 
 void Player::set_map(Map *m){

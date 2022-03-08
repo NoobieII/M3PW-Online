@@ -1,7 +1,7 @@
 #Lithio
 #February 25, 2022
 
-OBJS = camera.cpp main.cpp map.cpp mob.cpp player.cpp pwengine.cpp pwobject.cpp pwvec2.cpp space.cpp
+OBJS = camera.cpp main.cpp map.cpp map_transition.cpp mob.cpp player.cpp pwengine.cpp pwobject.cpp pwvec2.cpp space.cpp
 
 OBJ_NAME = prototype
 

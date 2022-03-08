@@ -3,6 +3,7 @@
 
 #include "constants.hpp"
 #include "map.hpp"
+#include "map_transition.hpp"
 #include "player.hpp"
 #include "pwengine.hpp"
 
@@ -19,6 +20,10 @@ int main(int argc, char *argv[]){
 	map->set_player(player);
 	player->set_map(map);
 	player->set_position(10.0f * kTileSize, 33.0f * kTileSize);
+	
+	//initialize map transition instance for moving through maps
+	MapTransition *tr = new MapTransition(engine, player, map);
+	map->set_map_transition(tr);
 	
 	//main game loop
 	while(!engine->is_quit()){

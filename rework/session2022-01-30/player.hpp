@@ -19,6 +19,7 @@ public:
 	
 	const Space &get_space();
 	void set_position(int x, int y);
+	void set_position(PWVec2 pos);
 	
 	void set_map(Map *m);
 	Map *get_map();

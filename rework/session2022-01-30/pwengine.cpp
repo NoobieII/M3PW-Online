@@ -279,6 +279,32 @@ void PWEngine::poll_all_events(){
 			break;
 		}
 	}
+	
+	//interpret arrow key movements
+	if(is_key_pressed_["Right"]){
+		direction_ |= 0x1;
+	}
+	if(is_key_pressed_["Up"]){
+		direction_ |= 0x2;
+	}
+	if(is_key_pressed_["Left"]){
+		direction_ |= 0x4;
+	}
+	if(is_key_pressed_["Down"]){
+		direction_ |= 0x8;
+	}
+	if(is_key_lifted_["Right"]){
+		direction_ &= 0xe;
+	}
+	if(is_key_lifted_["Up"]){
+		direction_ &= 0xd;
+	}
+	if(is_key_lifted_["Left"]){
+		direction_ &= 0xb;
+	}
+	if(is_key_lifted_["Down"]){
+		direction_ &= 0x7;
+	}
 }
 
 #else
@@ -412,6 +438,8 @@ void PWEngine::update_all(){
 	for(it2 = is_key_lifted_.begin(); it2 != is_key_lifted_.end(); ++it2){
 		it2->second = false;
 	}
+	
+	//direction_ = 0;
 	
 	scroll_x_ = 0;
 	scroll_y_ = 0;
@@ -827,32 +855,8 @@ PWVec2 PWEngine::get_arrow_direction(){
 	float x, y;
 	
 	//determine direction
-	if(is_key_pressed_["Right"]){
-		direction_ |= 0x1;
-	}
-	if(is_key_pressed_["Up"]){
-		direction_ |= 0x2;
-	}
-	if(is_key_pressed_["Left"]){
-		direction_ |= 0x4;
-	}
-	if(is_key_pressed_["Down"]){
-		direction_ |= 0x8;
-	}
-	if(is_key_lifted_["Right"]){
-		direction_ &= 0xe;
-	}
-	if(is_key_lifted_["Up"]){
-		direction_ &= 0xd;
-	}
-	if(is_key_lifted_["Left"]){
-		direction_ &= 0xb;
-	}
-	if(is_key_lifted_["Down"]){
-		direction_ &= 0x7;
-	}
 	
-	//printf("arrow direction = %x ", direction_);
+	//printf("arrow direction = %d ", direction_);
 	
 	switch(direction_){
 	case 0x1: //right

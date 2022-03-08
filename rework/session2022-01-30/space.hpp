@@ -48,6 +48,9 @@ public:
 	//usually if a collision is detected
 	void stop_and_undo();
 	
+	
+	void reset_position(PWVec2 position);
+	
 	//position, direction and dimensions
 	PWVec2 pos;
 	PWVec2 dir;

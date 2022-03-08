@@ -47,7 +47,7 @@ bool Space::is_colliding(const int *tiles, int width, int height, int tilesize){
 	//if any part of space is colliding with the map spaces
 	for(i = top; i < bot; ++i){
 		for(j = lhs; j < rhs; ++j){
-			if(tiles[j + i * width]){
+			if(tiles[j + i * width] % 2){
 				return true;
 			}
 		}
@@ -142,6 +142,13 @@ void Space::stop_and_undo(){
 	ay = 0;
 	*/
 	pos = prev_pos_;
+	vel_ = PWVec2(0.0f, 0.0f);
+	acc_ = PWVec2(0.0f, 0.0f);
+}
+
+void Space::reset_position(PWVec2 position){
+	pos = position;
+	prev_pos_ = pos;
 	vel_ = PWVec2(0.0f, 0.0f);
 	acc_ = PWVec2(0.0f, 0.0f);
 }
