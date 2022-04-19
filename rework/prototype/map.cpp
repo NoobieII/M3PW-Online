@@ -81,7 +81,7 @@ void Map::update(){
 }
 
 void Map::load(int map_id){
-	char filename[] = "mapXX.txt";
+	char filename[] = "maps/mapXX.txt";
 	char word[20];
 	int i;
 	//for portals
@@ -90,8 +90,8 @@ void Map::load(int map_id){
 	FILE *in;
 	
 	//create file name string "mapXX.txt"
-	filename[3] = (map_id % 100) / 10 + '0';
-	filename[4] = map_id % 10 + '0';
+	filename[8] = (map_id % 100) / 10 + '0';
+	filename[9] = map_id % 10 + '0';
 	
 	//open the file
 	in = fopen(filename, "rt");
