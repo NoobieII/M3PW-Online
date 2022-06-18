@@ -1,5 +1,6 @@
-# primatype
-A 2D  RPG where you are a dragon in a world of anthropomorphic animals. The game is about dragons and technology.
+# M3PW Online
+```
+A 2D RPG where you are a dragon in a world of anthropomorphic animals. The game is about dragons and technology.
 
 Check the folders in this repository.
     doc         Documents about the game and project.
@@ -7,3 +8,4 @@ Check the folders in this repository.
                 better understood.
 	rework      Linux and Windows code for creating prototypes - in progress.
     licenses    Licenses for SDL2 components.
+```
